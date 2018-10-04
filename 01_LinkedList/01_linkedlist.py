@@ -25,12 +25,11 @@ class LinkedList:
         :param data:
         :return:
         """
-        new_node = Node(data)
         cur_node = self.head
         while cur_node.next is not None:
             cur_node = cur_node.next
 
-        cur_node.next = new_node
+        cur_node.next = Node(data)
 
     def display(self):
         """
