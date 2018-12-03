@@ -5,7 +5,7 @@ l2  2 -> 5 -> 9 -> 8
 result = 543 + 8952
 """
 
-from singlyLL import SinglyLL, Node
+from LinkedList.singlyLL import Node, SinglyLL
 
 def add_two_numbers(l1, l2, l3):
     """ add l1 and l2 linkedlist into l3 linkedlist"""

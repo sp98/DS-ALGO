@@ -7,7 +7,6 @@ Logic:
     3. Head's next value should None
 """
 from singlyLL import SinglyLL
-
 # Head ->  A -> B -> C -> D -> None
 # None <-  A <- B <- C <- D <- Head
 
@@ -17,11 +16,12 @@ def reverse_linked_list(ll):
     prev = None
     cur = ll.head
 
-    while cur is not None:
+    while cur:
         nxt = cur.next
         cur.next = prev
         prev = cur
         cur = nxt
+    print(prev.data)
     ll.head = prev
 
 
@@ -59,12 +59,15 @@ def reverse_in_groups(head, k):
         count += 1
 
     if next_node is not None:
-        head.next = reverse_in_groups(next_node, k)
+        
+        head.next= reverse_in_groups(next_node, k)
     
-    tt = 'None'
-    if head.next:
-        tt = head.next.data
-    print(str(tt) + ' ---> ' + str(prev_node.data))
+    # tt = 'None'
+    # if head.next:
+    #     tt = head.next.data
+    # print(str(tt) + ' ---> ' + str(prev_node.data))
+    # print('head', ' ---> ' , head.data)
+    # print('Previous', ' ---> ', prev_node.data)
     return prev_node
 
 
@@ -95,32 +98,32 @@ def reverse_in_groups_alt(head, k, is_alt):
 
 
 if __name__ == '__main__':
-    ll = SinglyLL()
-    for i in range(1, 9):
-        ll.append(i)
-    print(ll.display())
-    reverse_linked_list(ll)
-    print(ll.display())
+    # ll = SinglyLL()
+    # for i in range(1, 9):
+    #     ll.append(i)
+    # print(ll.display())
+    # reverse_linked_list(ll)
+    # print(ll.display())
 
-    ll2 = SinglyLL()
-    for i in range(0, 6):
-        ll2.append(i)
-    print(ll2.display())
-    ll2.head = reverse_linked_list_recursive(ll2.head)
-    print(ll2.display())
+    # ll2 = SinglyLL()
+    # for i in range(0, 6):
+    #     ll2.append(i)
+    # print(ll2.display())
+    # ll2.head = reverse_linked_list_recursive(ll2.head)
+    # print(ll2.display())
 
     print('Reverse every K Node')
     ll3 = SinglyLL()
-    for i in range(3, 9):
+    for i in range(18, 9, -1):
         ll3.append(i)
     print(ll3.display())
-    ll3.head = reverse_in_groups(ll3.head, 2)
+    ll3.head = reverse_in_groups(ll3.head, 3)
     print(ll3.display())
 
-    print('Reverse every K node, alternatively')
-    ll4 = SinglyLL()
-    for i in range(3, 9):
-        ll4.append(i)
-    print(ll4.display())
-    ll4.head = reverse_in_groups_alt(ll4.head, 2, True)
-    print(ll4.display())
+    # print('Reverse every K node, alternatively')
+    # ll4 = SinglyLL()
+    # for i in range(3, 9):
+    #     ll4.append(i)
+    # print(ll4.display())
+    # ll4.head = reverse_in_groups_alt(ll4.head, 2, True)
+    # print(ll4.display())

@@ -23,7 +23,7 @@ def fibonacci_nth(n):
     elif n == 1:
         return b
     else:
-        for i in range(2, n+1):
+        for i in range(2, n):
             c = a + b 
             a = b
             b = c
@@ -33,9 +33,9 @@ def fibonacci_nth(n):
 def fibonacci_nth_rec(n):
     if n < 0:
         print('invalid number')
-    if n == 1:
+    if n == 0:
         return 0
-    if n == 2 :
+    if n == 1 :
         return 1
     
     return fibonacci_nth_rec(n-2) + fibonacci_nth_rec(n-1)
@@ -69,8 +69,10 @@ def fibonacci_memo_2(n):
 
 
 if __name__ == '__main__':
-    #fibonacci(8)
-    #fibonacci_nth(9)
-    #print(fibonacci_nth_rec(100))
+    fibonacci(8)
+    print('*' * 20)
+    fibonacci_nth(9)
+    print('*' * 20)
+    print(fibonacci_nth_rec(9))
     # print(fibonacci_memo(10))
-    print(fibonacci_memo_2(100))
+    #print(fibonacci_memo_2(100))

@@ -7,7 +7,7 @@ Logic:
     - At the end slow node will be middle.
     - Remove middle element
 """
-from singlyLL import SinglyLL
+from LinkedList.singlyLL import SinglyLL
 
 
 def delete_middle(head):

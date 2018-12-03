@@ -2,7 +2,7 @@
 Insert a node at a specific position in a linked list
 
 """
-from singlyLL import Node, SinglyLL
+from LinkedList.singlyLL import Node, SinglyLL
 
 
 def insert_node_at(sll, data, position):

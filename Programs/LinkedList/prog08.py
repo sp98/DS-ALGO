@@ -2,7 +2,7 @@
 Remove duplicate elements from a linkd List
 """
 
-from singlyLL import SinglyLL
+from LinkedList.singlyLL import SinglyLL
 
 
 def remove_dup(head):

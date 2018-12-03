@@ -3,11 +3,10 @@ Find Middle of a linked list in single pass
 Logic:
     - Loop through the linked list with two Nodes.
     - One of Nodes increments twice. Other increments once.
-    - Once the fast node.next is null, return fast node data
+    - Once the fast node.next is null, return slow node data
 """
 
-
-from singlyLL import SinglyLL
+from LinkedList.singlyLL import SinglyLL
 
 
 def find_middle(head):
@@ -15,7 +14,7 @@ def find_middle(head):
     slow_node = head
     fast_node = head
     """taking fast_node not none condition to
-    prevent nontype error in case of odd number
+    prevent nontype error in case of even number
     of nodes.
     """
     while fast_node and fast_node.next is not None:

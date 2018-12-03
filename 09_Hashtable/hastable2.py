@@ -10,11 +10,11 @@ class Hashtable:
     def put(self, key, data):
         hashvalue = self.hashfunction(key, len(self.slots))
 
-        if not self.slots[hashvalue]:
+        if not self.slots[hashvalue]:   # Add new value
             self.slots[hashvalue] = key
             self.data[hashvalue] = data
         else:
-            if self.slots[hashvalue] == key:
+            if self.slots[hashvalue] == key:    # Override
                 self.data[hashvalue] = data
             else:
                 nextslot = self.rehash(hashvalue, len(self.slots))
@@ -59,9 +59,9 @@ class Hashtable:
 if __name__ == '__main__':
     h = Hashtable(5)
     h[1] = 'one'
-    h[2] = 'two'
-    h[3] = 'two'
-    h[4] = 'twooverlapped'
-    h[5] = '5 added'
+    # h[2] = 'two'
+    # h[3] = 'two'
+    # h[4] = 'twooverlapped'
+    # h[5] = '5 added'
 
     print(h[5])

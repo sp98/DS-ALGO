@@ -2,8 +2,8 @@
 Detect and Remove loop 2
 """
 
-from singlyLL import SinglyLL
-from prog01 import insert_node_at
+from LinkedList.singlyLL import SinglyLL
+from LinkedList.prog01 import insert_node_at
 
 
 def create_ll_with_loop(ll):

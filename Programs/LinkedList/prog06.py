@@ -9,7 +9,7 @@ Logic:
     - Move reference of the previous node to None
 """
 
-from singlyLL import SinglyLL
+from LinkedList.singlyLL import SinglyLL
 
 
 def create_ll_with_loop(ll):

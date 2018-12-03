@@ -13,8 +13,7 @@ Logic 2:
     - When first pointer moves to last item, the second one would be at desired
       location)
 """
-
-from singlyLL import SinglyLL
+from LinkedList.singlyLL import SinglyLL
 
 
 def find_nth_from_last1(head, pos, length):

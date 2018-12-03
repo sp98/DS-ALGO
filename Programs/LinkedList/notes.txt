@@ -1,0 +1,10 @@
+prog01.py :: Insert a node at a specific position in a linked list (done)
+prog02.py :: Reverse a doubly Linked List
+Prog03.py :: Find Middle of a linked list in single pass(done)
+Prog04.py :: Delete Middle Element of a Linked List (done)
+Prog05.py :: Find nth number from the end of a linked list(done)
+Prog06.py :: Detect and remove a loop in a linked list.
+Prog06b.py :: Detect and Remove loop 2
+prog07.py :: Reverse a linked list (done)
+prog08.py :: Remove duplicate elements from a linkd List
+prog09.py :: Find sum of two linked list of positive digits

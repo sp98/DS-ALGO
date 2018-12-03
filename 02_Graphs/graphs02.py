@@ -1,4 +1,5 @@
 """
+Graph Implementation in Python
 """
 
 class Vertex:
@@ -46,9 +47,34 @@ class Graph:
         for key in sorted(list(self.vertices.keys())):
             print(key + " : " + str(self.vertices[key].neighbours))
 
+
+    def bsf(self, vrtx):
+        """ Breadth first Search """
+        print('here')
+        q = list()
+        vrtx.distance = 0
+        vrtx.color = 'red'
+        for v in vrtx.neighbours:
+            self.vertices[v].distance = vrtx.distance + 1
+            q.append(v)
+        print(q)
+
+        while len(q) > 0:
+            print(q)
+            u = q.pop(0)
+            node_u = self.vertices[u]
+            node_u.color = 'red'
+
+            for v in node_u.neighbours:
+                node_v = self.vertices[v]
+                if node_v.color == 'black':
+                    q.append(v)
+                    if node_v.distance > node_u.distance + 1:
+                        node_v.distance = node_v.distance + 1
 if __name__ == '__main__':
     g = Graph()
-    
+    a = Vertex('A')
+    g.add_vertex(a)
     # Adding vertices:
     for v in range(ord('A'), ord('K')):
         g.add_vertex(Vertex(chr(v)))
@@ -59,3 +85,4 @@ if __name__ == '__main__':
         g.add_edge(edge[:1], edge[1:])
 
     g.display()
+    g.bsf(a)
