@@ -18,13 +18,13 @@ class Hashtable:
                 self.data[hashvalue] = data
             else:
                 nextslot = self.rehash(hashvalue, len(self.slots))
-                while self.slots[nextslot] != None and self.slots[nextslot] != key:
+                while self.slots[nextslot] != None or self.slots[nextslot] != key:
                     nextslot = self.rehash(nextslot, len(self.slots))
                 if self.slots[nextslot] == None:
                     self.slots[nextslot] = key
                     self.data[nextslot] = data
                 else:
-                    self.data[nextslot] = data
+                    self.data[nextslot] = data  # Override
 
     def hashfunction(self, key, size):
         return key%size

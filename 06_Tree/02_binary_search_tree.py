@@ -179,7 +179,7 @@ class BST:
 
     def BFS(self):
         if self.root is None:
-            return false
+            return False
         else:
             for level in range(1, self.height()+1):
                 self.root.BFS(level)

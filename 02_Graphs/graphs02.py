@@ -24,7 +24,7 @@ class Graph:
 
     def add_vertex(self, v):
         """ Add a new vertex into the graph dict"""
-        if isinstance(v, Vertex) and v not in self.vertices.keys():
+        if isinstance(v, Vertex) and v.name not in self.vertices.keys():
             self.vertices[v.name] = v
             return True
         else:
@@ -34,9 +34,9 @@ class Graph:
         """ Add and edge into the graph """
         if u in self.vertices and v in self.vertices:
             for key, value in self.vertices.items():
-                if key is u:
+                if key == u:
                     value.add_neighbours(v)
-                if key is v:
+                if key == v:
                     value.add_neighbours(u)
             return True
         else:
@@ -45,7 +45,7 @@ class Graph:
     def display(self):
         """ Display the graph """
         for key in sorted(list(self.vertices.keys())):
-            print(key + " : " + str(self.vertices[key].neighbours))
+            print(key + " : " + str(self.vertices[key].neighbours) + " " + str(self.vertices[key].distance))
 
 
     def bsf(self, vrtx):
@@ -84,5 +84,5 @@ if __name__ == '__main__':
     for edge in edges:
         g.add_edge(edge[:1], edge[1:])
 
-    g.display()
     g.bsf(a)
+    g.display()
